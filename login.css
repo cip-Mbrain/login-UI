@@ -201,13 +201,6 @@ ul {
 }
 /* title */
 
-.title-underline {
-  background: var(--primary-500);
-  width: 7rem;
-  height: 0.25rem;
-  margin: 0 auto;
-  margin-top: -1rem;
-}
 /*
 =============== 
 Modal
@@ -251,7 +244,7 @@ Modal
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.8);
   display: grid;
   place-items: center;
 }
@@ -270,9 +263,22 @@ Modal
   font-weight: bolder;
   font-size: 2rem;
   color: var(--primary-500);
+  letter-spacing: var(--letterSpacing);
 }
 .title span {
   color: var(--primary-700);
+}
+
+.title-underline {
+  background: linear-gradient(
+    140deg,
+    var(--primary-700) 50%,
+    var(--primary-500) 50%
+  );
+  width: 7rem;
+  height: 0.25rem;
+  margin: 0 auto;
+  margin-top: -1.2rem;
 }
 
 .form {
@@ -280,11 +286,19 @@ Modal
 }
 
 .form-label {
-  display: block;
   font-size: var(--smallText);
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
   text-transform: capitalize;
   letter-spacing: var(--letterSpacing);
+  font-weight: 700;
+}
+
+.form label,
+input {
+  display: block;
+  width: 100%;
+  padding-bottom: 0.7rem;
+  margin-top: -0.5rem;
 }
 .form-input,
 .form-textarea {
@@ -295,19 +309,31 @@ Modal
   border: 1px solid var(--grey-200);
 }
 
-.form-row {
-  margin-bottom: 1rem;
+#name[type='text'],
+#password[type='password'] {
+  padding: 0.7rem;
+  font-size: 1rem;
+  outline: none;
+  letter-spacing: var(--letterSpacing);
 }
 
-.form-textarea {
-  height: 7rem;
+.forget-password {
+  color: var(--grey-800);
+  font-weight: bold;
 }
-::placeholder {
-  font-family: inherit;
-  color: var(--grey-400);
-}
-.form-alert {
-  color: var(--red-dark);
+
+.submit {
+  width: 100%;
+  padding: 0.5rem;
+  cursor: pointer;
+  border: none;
+  background: var(--primary-600);
+  color: var(--white);
   letter-spacing: var(--letterSpacing);
-  text-transform: capitalize;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.submit:hover {
+  background: var(--primary-700);
 }
